@@ -1,0 +1,25 @@
+$pc: 1200px;  // PC
+$tab: 1199px; // タブレット
+$spXl: 1024px; // スマホラージ
+$spsm: 496px; // スマホスモール
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin spxl {
+  @media (max-width: ($spXl)) {
+    @content;
+  }
+}
+  @mixin spsm {
+    @media (max-width: ($spsm)) {
+      @content;
+    }
+  }

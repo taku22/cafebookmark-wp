@@ -1,0 +1,124 @@
+.snsLink {
+  padding:0 20px 38px 25px;
+
+  @include pc {
+    display: none;
+  }
+
+  @include tab {
+    display: none;
+  }
+
+  @include spxl {
+    display: block;
+    width: 39px;
+    height: 31px;
+    padding:0 19px 0 17px;
+  }
+
+  &__anchor{
+    cursor: pointer;
+  }
+
+  &__logo {
+    @include spxl{
+      width: 39px;
+      height: 31px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size:2.4rem;
+    @include spxl {
+      font-size: 1.6rem;
+    }
+  }
+  &__menu {
+    &--closed{
+      display: none;
+    }
+    &--opened {
+      position: absolute;
+      display: block;
+      background-color: #5e9d93;
+      @include pc{
+        display: none;
+        top:100px;
+        width: 500px;
+        height: 150px;
+      }
+
+      @include tab {
+        display: none;
+        top:100px;
+        left:0;
+        width: 100%;
+        height: 150px;
+      }
+
+      @include spxl {
+        display: block;
+        top:60px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+      }
+
+      @include spsm {
+        display: block;
+        top:60px;
+        width: 100%;
+        height: 150px;
+      }
+      .menu__wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        .menu__container {
+          text-align: center;
+          width: 33%;
+          height: 33%;
+          .icon-size {
+            font-size: 5rem;
+            color:#212d55;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu__container--pconly {
+  @include pc {
+    display: block;
+    padding-right: 30px;
+  }
+  @include tab {
+    display: block;
+    padding-left:20px;
+  }
+  @include spxl {
+    display: none !important;
+  }
+
+  @include spsm {
+    display: none;
+  }
+
+
+  @include tab {
+    display: block;
+  }
+  li {
+    display: inline-block;
+    padding: 30px 15px 0 0;
+  }
+
+}
+

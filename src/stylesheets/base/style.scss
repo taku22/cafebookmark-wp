@@ -1,0 +1,22 @@
+
+.wrapper {
+  @include pc {
+    width: 1200px;
+    margin:150px auto 0;
+
+  }
+  @include tab {
+    margin:150px auto 0;
+  }
+  @include spxl {
+    width: 100%;
+    margin: 60px auto;
+  }
+}
+
+.container {
+  display: flex;
+  @include spxl {
+    display: block;
+  }
+}

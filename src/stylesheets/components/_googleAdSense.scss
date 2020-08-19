@@ -1,0 +1,26 @@
+.googleAdSense {
+  &--pconly {
+    @include pc {
+    display: block;
+    width: 815px;
+    text-align: center;
+    margin-top: 50px;
+    }
+    @include tab {
+      width:73%;
+      margin: 0 auto;
+    }
+    @include spxl {
+      display: none;
+    }
+  }
+
+
+  &__wrapper {
+    margin: 0 auto;
+    @include tab {
+      width: 73%;
+      margin: 20px  auto 0;
+    }
+  }
+}
