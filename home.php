@@ -17,29 +17,14 @@
           </div>
         </div>
       </div>
-      <div class="latestArchive">
-        <div class="latestArchive__title">
+      <div class="latestArticleList">
+        <div class="latestArticleList__title">
           <p>最新記事</p>
         </div>
-        <div class="latestArchive__wrapper">
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
-          <div class="latestArchive__container"><img src="https://placehold.jp/240x160.png">
-            <p>タイトル</p>
-          </div>
+        <div class="latestArticleList__wrapper">
+          <?php if(have_posts()): while(have_posts()): the_post(); ?>
+            <?php get_template_part('loop-content'); ?>
+          <?php endwhile; endif;  ?>
         </div>
       </div>
     </main>

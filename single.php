@@ -2,53 +2,56 @@
 <div class="wrapper">
   <div class="container">
     <main class="main">
-      <div class="archive">
-        <div class="archive__image"><img src="https://placehold.jp/960x540.png"></div>
-        <div class="archiveWrapper">
-          <div class="archiveWrapper__title">
-            <h1>なぜ日本の捕鯨が非難されるのか</h1>
+    <?php if(have_posts()): the_post(); ?>
+      <article <?php post_class( 'articleWrapper' ); ?>>
+
+        <div class="article">
+          <!--アイキャッチ取得-->
+          <div class="article-img">
+            <?php if( has_post_thumbnail() ): ?>
+              <?php the_post_thumbnail( 'large' ); ?>
+            <?php endif; ?>
           </div>
-          <div class="archiveWrapper__description">
-            <div class="archiveWrapper__seriseName">
-              <p>why シリーズ</p>
-            </div>
-            <div class="archiveWrapper__dataName">
-              <p>2020/08/01</p>
-            </div>
+          <!--タイトル-->
+          <h1 class="article__title"><?php the_title(); ?></h1>
+          <div class="article-info">
+            <!--カテゴリ取得-->
+            <?php if(has_category() ): ?>
+              <span class="cat-data">
+                <?php echo get_the_category_list( ' ' ); ?>
+              </span>
+            <?php endif; ?>
+            <!--投稿日を取得-->
+            <span class="article-date">
+              <i class="far fa-clock"></i>
+              <time
+              datetime="<?php echo get_the_date( 'Y-m-d' ); ?>">
+              <?php echo get_the_date(); ?>
+              </time>
+            </span>
+            <!--著者を取得-->
+            <span class="article-author">
+              <i class="fas fa-user"></i><?php the_author(); ?>
+            </span>
+            <span><?php the_tags(); ?></span>
           </div>
-          <div class="archiveWrapper__tag">
-            <p>#捕鯨 #欧米 #日本</p>
-          </div>
-          <div class="archiveWrapper__content">
-            <p>そこは前人知れずその反対共という事の以上に行っずる。</p>けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 あまりには生れなかっでしたた。
-            中学校を行っないものは同時に次第に至極たたな。ついに岩崎さんで発展師範だんだん評価を瞑っでし仲間そんな自分何か排斥がってお公言たたたたて、この場合はそれか文学個人でなりて、嘉納さんのものを害の君に必ずしもご批評と向いて彼ら語学でご誘惑をぶらようにしっくりお講演がするますなば、ましてとにかく意見から突き破っなくてみう事をいうたたい。
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、 けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-            けっして当時の攻撃論は充分その誤解でたかもで迂ばならでがも附随知れななて、
-          </div>
-          <div class="archiveWrapper__footer">
+          <!--本文取得-->
+          <?php the_content(); ?>
+          <div class="articl__footer">
             <div class="footer__snsShare">
               <div class="snsShare__round--twitter"><i class="fab fa-twitter fa-3x"></i></div>
               <div class="snsShare__round--line"><i class="fab fa-line fa-3x"></i></div>
               <div class="snsShare__round--facebook"><i class="fab fa-facebook-square fa-3x"></i></div>
               <div class="snsShare__round--pinterest"><i class="fab fa-pinterest-square fa-3x"></i></div>
             </div>
-            <div class="footer__tag">
-              <div class="tag__container">
-                <p>タグ</p>
-              </div>
-              <div class="tag__container">
-                <p>タグ</p>
-              </div>
-            </div>
+          <!--タグ-->
+          <div class="article-tag">
+            <?php the_tags('<ul><li>タグ： </li><li>','</li><li>','</li></ul>'
+          ); ?>
           </div>
-        </div>
       </div>
+      </article>
+    <?php endif; ?>
     </main>
     <?php get_sidebar(); ?>
   </div>
@@ -71,9 +74,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer">
-    <div class="footer__text"><small>&copy; 2020 intys</small></div>
-  </footer>
 </div>
 <?php get_footer(); ?>
 

@@ -1,4 +1,4 @@
-.archive {
+.articleWrapper {
   width: 885px;
   margin: 0 auto;
 
@@ -43,7 +43,7 @@
   }
 }
 
-.archiveWrapper {
+.article {
   width: 650px;
   margin: 0 auto;
   background-color: #e0e0e0;
@@ -52,7 +52,7 @@
     width: 100%;
   }
 
-  &__title h1 {
+  &__title {
     padding-top:42px;
     font-size: 3.5rem;
     @include spxl {
